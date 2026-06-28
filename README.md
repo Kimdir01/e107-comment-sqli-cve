@@ -7,7 +7,7 @@
 | **CVE ID** | Pending (Request via GitHub CNA) |
 | **Ecosystem** | PHP CMS |
 | **Package** | e107inc/e107 |
-| **Affected Version** | ≤ 2.3.x (latest main branch as of 2026-06-28) |
+| **Affected Version** | ≤ 2.3.4 (commit `5e167f1`, 2026-06-28 main branch) |
 | **CVSS v3.1** | **7.5** (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N) |
 | **CWE** | CWE-89: Improper Neutralization of Special Elements used in an SQL Command |
 | **Researcher** | Fatullayev Asadbek (GitHub: Kimdir01) |
@@ -26,6 +26,7 @@ e107 CMS v2.3.x contains an unauthenticated SQL injection vulnerability in its c
 | **Method** | `enter_comment()` |
 | **Lines** | 764-768 |
 | **Repository** | https://github.com/e107inc/e107 |
+| **Commit** | `5e167f1` (Merge pull request #5778, 2026-06-28) |
 
 ## Description
 
@@ -155,9 +156,9 @@ grep -c "real_escape\|addslashes" e107_handlers/e_parse_class.php
 | Date | Event |
 |------|-------|
 | 2026-06-28 | Vulnerability discovered by Fatullayev Asadbek |
-| 2026-06-28 | CVE ID requested via GitHub Advisory |
-| TBD | Vendor notification |
-| TBD | Public disclosure |
+| 2026-06-28 | Vendor notified + CVE ID requested via GitHub Security Advisory (e107inc/e107 → Security → Report a vulnerability) |
+| TBD | Vendor acknowledgment / response |
+| TBD + 90 days | Coordinated public disclosure |
 
 ## Credits
 
