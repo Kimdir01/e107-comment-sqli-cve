@@ -10,7 +10,7 @@
 |-------|-------|
 | **Ecosystem** | PHP CMS |
 | **Package/Product** | e107 CMS — Bootstrap Content Management System |
-| **Affected Versions** | All versions through commit `5e167f1` (main branch, 2026-06-28) |
+| **Affected Versions** | All versions (commit `5e167f1`, main branch as of 2026-06-28) |
 | **Patched Versions** | None |
 | **Severity** | **HIGH (CVSS 7.5)** |
 | **CWE** | CWE-89 (SQL Injection) |
